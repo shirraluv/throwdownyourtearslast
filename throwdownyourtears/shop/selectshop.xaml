@@ -1,0 +1,43 @@
+﻿<Page x:Class="throwdownyourtears.shop.selectshop"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:throwdownyourtears.shop"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="selectshop">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ListBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Height="650" Width="1000" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="249" Margin="71,116,0,0" Height="178" Grid.Row="1">
+            <Label HorizontalAlignment="Center" Content="Выбор предприятия"/>
+            <Label Content=" " Height="11"/>
+            <ListBox HorizontalContentAlignment="Center" x:Name="s" Background="White" SelectedItem="{Binding SelectedData}" ItemsSource="{Binding Shops}" DisplayMemberPath="Name" Height="75" Width="244" Foreground="Black" BorderBrush="#FFEE7CFB" OpacityMask="#FFE888FF"/>
+            <Label Content=" " Height="11"/>
+            <Button Margin="0 5 0 0" Content="Войти" Click="sign"/>
+
+        </StackPanel>
+        <Border Margin="71,147,680,420" Grid.RowSpan="2" BorderBrush="#FFFD00FF" BorderThickness="1,1,1,1"/>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="694,133,0,0" Width="250" Height="178" Grid.Row="1">
+            <Label HorizontalAlignment="Center" Content="Добавление предприятия"/>
+            <Label Content="Название" Width="64"/>
+            <Label Content=" " Height="11"/>
+            <TextBox Text="{Binding Namesss}" TextAlignment="Center"/>
+            <Label Content=" " Height="11"/>
+            <Button Margin="0 5 0 0" Content="Добавить" Click="Add"/>
+        </StackPanel>
+    </Grid>
+</Page>

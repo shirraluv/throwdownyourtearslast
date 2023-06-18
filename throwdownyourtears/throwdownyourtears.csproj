@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="edit\**" />
+    <EmbeddedResource Remove="edit\**" />
+    <None Remove="edit\**" />
+    <Page Remove="edit\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="github.png" />
+    <None Remove="png\github.png" />
+    <None Remove="png\registration.png" />
+    <None Remove="png\store.png" />
+    <None Remove="png\telegram.png" />
+    <None Remove="png\user-interface.png" />
+    <None Remove="png\vk.png" />
+    <None Remove="signin\registration.png" />
+    <None Remove="signin\user-interface.png" />
+    <None Remove="store.png" />
+    <None Remove="telegram.png" />
+    <None Remove="vk.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="github.png" />
+    <Resource Include="png\github.png" />
+    <Resource Include="png\registration.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MySql.Data" Version="8.0.32" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="png\store.png" />
+    <Resource Include="png\telegram.png" />
+    <Resource Include="png\user-interface.png" />
+    <Resource Include="png\vk.png" />
+    <Resource Include="signin\registration.png" />
+    <Resource Include="signin\user-interface.png" />
+    <Resource Include="store.png" />
+    <Resource Include="telegram.png" />
+    <Resource Include="vk.png" />
+  </ItemGroup>
+
+</Project>

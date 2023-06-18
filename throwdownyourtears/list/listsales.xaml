@@ -1,0 +1,43 @@
+﻿<Page x:Class="throwdownyourtears.list.listsales"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:throwdownyourtears.list"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1200"
+      Title="listsales">
+    <Grid Height="650" Width="1200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Button FontSize="16"  FlowDirection="LeftToRight"  Content="Продажа" Click ="clickOpenlistsales" BorderThickness="1,1,1,1" Margin="26,142,1038,476" Grid.Row="1"/>
+        <Button FontSize="16"  FlowDirection="LeftToRight" Content="Отчет" Click ="clickOpenlistreport" BorderThickness="1,1,1,1" Margin="26,196,1038,422" Grid.Row="1" />
+        <Button FontSize="16"  FlowDirection="LeftToRight"  Content="Товары" Click ="clickOpenlistproduct" BorderThickness="1,1,1,1" Margin="26,87,1038,531" Grid.Row="1"/>
+        <Button FontSize="16"  FlowDirection="LeftToRight"  Content="История" Click ="clickOpenlisthistory" BorderThickness="1,1,1,1" Margin="26,251,1038,367" Grid.Row="1"/>
+        <Button FontSize="16" FlowDirection="LeftToRight" Content="Связь с ТП" Click="clickOpenSvyaz" BorderThickness="1,1,1,1" Margin="26,542,1038,76" Grid.Row="1"/>
+        <Button FontSize="16"  FlowDirection="LeftToRight"  Content="Выход" Click ="exit" BorderThickness="1,1,1,1" Margin="26,594,1038,24" Grid.Row="1"/>
+        <Label Content="Поиск" Margin="300,116,-300,482" Grid.Row="1"/>
+        <TextBox x:Name="SearchTextBox" Grid.Row="1" Margin="300,143,10,0" VerticalAlignment="Top" TextChanged="SearchTextBox_TextChanged" />
+        <ListView x:Name="ss" Background="White" ItemsSource="{Binding Data}" SelectedItem="{Binding Selectedproduct}" Margin="212,180,10,39" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Price}"/>
+                    <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding Quantity}"/>
+                    <GridViewColumn Header="Кол-во продаж" DisplayMemberBinding="{Binding Productsales}"/>
+                    <GridViewColumn Header="Выручка" DisplayMemberBinding="{Binding Productgain}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button  FontSize="16"  FlowDirection="LeftToRight"  Content="Продажа" Margin="1016,62,10,556" Grid.Row="1" Click ="opensale">
+        </Button>
+        <Image Margin="69,325,1081,275" Grid.RowSpan="2" Source="/png/store.png" Visibility="Visible" Name="_111" Height="50" Width="50"/>
+        <Label Margin="44,382,0,244" Content="{Binding shopname}" Grid.RowSpan="2" HorizontalAlignment="Left" Width="100" HorizontalContentAlignment="Center"/>
+        <Image Margin="69,440,1081,160" Grid.RowSpan="2" Source="/png/user-interface.png" Visibility="Visible" Name="_112" Height="50" Width="50"/>
+        <Label Margin="44,495,0,131" Content="{Binding username}" Grid.RowSpan="2" HorizontalAlignment="Left" Width="100" HorizontalContentAlignment="Center"/>
+    </Grid>
+</Page>
